@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Header from './src/componentes/Header';
+import ListaPessoas from './src/componentes/ListaPessoas';
 import axios from 'axios';
 
 export default class App extends React.Component {
@@ -10,7 +11,7 @@ export default class App extends React.Component {
     this.state = {
       pessoas: []
     };
-  }
+  };
 
   componentDidMount(){
     axios
@@ -22,26 +23,14 @@ export default class App extends React.Component {
         pessoas: results
       });      
     })
-  }  
-  renderList(){
-    // const nomes = [
-    //   'Ricardo Lima',
-    //   'Jefferson Euclides',
-    //   'Italo Melo',
-    // ];
-    // const  listNomes = nomes.map((nome, index) => {
-    //   return <Text key={index}>{nome}</Text>
-    // })
+  };
 
-
-    // return listNomes;
-  }  
   render() {
     
     return (         
       <View>
-        <Header titulo = "Contatos"/> 
-        {this.renderList()}         
+        <Header titulo = "Contatos" />   
+        <ListaPessoas pessoas = {this.state.pessoas} />
       </View>
     );
   }

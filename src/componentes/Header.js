@@ -12,12 +12,13 @@ const Header = (props) => (
 const style = StyleSheet.create({
     view: {
         marginTop: 25,
-        backgroundColor: '#dcdcdc',   
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: "#414146",   
+        alignItems: "center",
+        justifyContent: "center",
     },
     titulo: {
-        fontSize: 50
+        fontSize: 50,
+        color: "#fff",
     }
 });
 
