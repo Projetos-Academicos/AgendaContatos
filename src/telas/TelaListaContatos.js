@@ -35,8 +35,8 @@ export default class TelaListaContatos extends React.Component {
     //   this.props.navigation.navigate("DetalhesContato");      
     return (         
       <View>      
-        <ListaPessoas pessoas = {this.state.pessoas} onPressItemLista = {() =>{
-            this.props.navigation.navigate("DetalhesContato");      
+        <ListaPessoas pessoas = {this.state.pessoas} onPressItemLista = {parametroPagina => {
+            this.props.navigation.navigate("DetalhesContato", parametroPagina);      
         }} />
       </View>
     );

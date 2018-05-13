@@ -11,7 +11,7 @@ const ItensListaPessoas = props => {
     const {first, last} = pessoa.name; 
     /* {`${first} ${last}`}  = string template pra concatenar as constantes first e last*/
     return (
-        <TouchableOpacity onPress={navegarTelaContatoDetalhes} >
+        <TouchableOpacity onPress={() =>{ navegarTelaContatoDetalhes({ pessoa }); }} >
             <View style={styles.linha} >
                 <Image style={styles.avatar} source={{uri: pessoa.picture.thumbnail}} />
                 <Text style={styles.nomes}>{`${PrimeiraLetraMaiuscula(first)} ${PrimeiraLetraMaiuscula(last)}`}</Text>
