@@ -5,7 +5,7 @@ import ItensListaPessoas from './ItensListaPessoas';
 const ListaPessoas = props => {           
     const {pessoas} = props;
     const itens = pessoas.map((pessoa, index) =>{
-        return <ItensListaPessoas key={index} pessoas = {pessoa} />
+        return <ItensListaPessoas key={index} pessoa = {pessoa} />
     });
 
     return (
