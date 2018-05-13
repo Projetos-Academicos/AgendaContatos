@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 // import Header from '../componentes/Header';
-import ListaPessoas from '../componentes/ListaPessoas';
+import ListaContatos from '../componentes/ListaContatos';
 import axios from 'axios';
 
 /*
@@ -20,7 +20,7 @@ export default class TelaListaContatos extends React.Component {
 
   componentDidMount(){
     axios
-    .get('https://randomuser.me/api/?nat=br&results=5')
+    .get('https://randomuser.me/api/?nat=br&results=15')
     .then(response => {
       // const x = response.data.results - SEM DESTRUCTING
       const {results} = response.data; // - COM DESTRUCTING
@@ -35,7 +35,7 @@ export default class TelaListaContatos extends React.Component {
     //   this.props.navigation.navigate("DetalhesContato");      
     return (         
       <View>      
-        <ListaPessoas pessoas = {this.state.pessoas} onPressItemLista = {parametroPagina => {
+        <ListaContatos pessoas = {this.state.pessoas} onPressItemLista = {parametroPagina => {
             this.props.navigation.navigate("DetalhesContato", parametroPagina);      
         }} />
       </View>

@@ -3,10 +3,10 @@ import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {PrimeiraLetraMaiuscula} from '../utils';
 
 /*
-    Importado por: ListaPessoas;
+    Importado por: ListaContatos;
 */
 
-const ItensListaPessoas = props => {
+const ItensListaContatos = props => {
     const {pessoa, navegarTelaContatoDetalhes} = props;    
     const {first, last} = pessoa.name; 
     /* {`${first} ${last}`}  = string template pra concatenar as constantes first e last*/
@@ -43,4 +43,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default ItensListaPessoas;
+export default ItensListaContatos;
