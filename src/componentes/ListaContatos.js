@@ -1,5 +1,5 @@
 import React from 'react';
-import {ScrollView, Text, StyleSheet} from 'react-native';
+import {FlatList, Text, StyleSheet} from 'react-native';
 import ItensListaContatos from './ItensListaContatos';
 
 /*
@@ -7,15 +7,13 @@ import ItensListaContatos from './ItensListaContatos';
 */
 
 const ListaContatos = props => {           
-    const {pessoas, onPressItemLista} = props;
-    const itens = pessoas.map((pessoa, index) =>{
-        return <ItensListaContatos key={index} pessoa = {pessoa} navegarTelaContatoDetalhes = {onPressItemLista} />
-    });
-
+    const {pessoas, onPressItemLista} = props;     
     return (
-        <ScrollView style={styles.container}>
-            {itens}
-        </ScrollView>
+     <FlatList style={styles.container} data={pessoas} 
+        renderItem={({item}) => {
+            return <ItensListaContatos pessoa = {item} navegarTelaContatoDetalhes = {onPressItemLista} />
+         }} 
+         keyExtractor={item => item.cell}/>
 
     );
 }
