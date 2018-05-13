@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import Header from './src/componentes/Header';
 import ListaPessoas from './src/componentes/ListaPessoas';
 import axios from 'axios';
@@ -25,8 +25,7 @@ export default class App extends React.Component {
     })
   };
 
-  render() {
-    
+  render() {    
     return (         
       <View>
         <Header titulo = "Contatos" />   
