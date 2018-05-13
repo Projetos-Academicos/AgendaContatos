@@ -1,16 +1,22 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import {PrimeiraLetraMaiuscula} from '../utils';
 
+/*
+    Importado por: ListaPessoas;
+*/
+
 const ItensListaPessoas = props => {
-    const {pessoa} = props;    
+    const {pessoa, navegarTelaContatoDetalhes} = props;    
     const {first, last} = pessoa.name; 
     /* {`${first} ${last}`}  = string template pra concatenar as constantes first e last*/
     return (
-        <View style={styles.linha} >
-            <Image style={styles.avatar} source={{uri: pessoa.picture.thumbnail}} />
-            <Text style={styles.nomes}>{`${PrimeiraLetraMaiuscula(first)} ${PrimeiraLetraMaiuscula(last)}`}</Text>
-        </View>
+        <TouchableOpacity onPress={navegarTelaContatoDetalhes} >
+            <View style={styles.linha} >
+                <Image style={styles.avatar} source={{uri: pessoa.picture.thumbnail}} />
+                <Text style={styles.nomes}>{`${PrimeiraLetraMaiuscula(first)} ${PrimeiraLetraMaiuscula(last)}`}</Text>
+            </View>
+        </TouchableOpacity>
     );
 }
 

@@ -2,10 +2,14 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import ItensListaPessoas from './ItensListaPessoas';
 
+/*
+    Importado por: TelaListaContatos;
+*/
+
 const ListaPessoas = props => {           
-    const {pessoas} = props;
+    const {pessoas, onPressItemLista} = props;
     const itens = pessoas.map((pessoa, index) =>{
-        return <ItensListaPessoas key={index} pessoa = {pessoa} />
+        return <ItensListaPessoas key={index} pessoa = {pessoa} navegarTelaContatoDetalhes = {onPressItemLista} />
     });
 
     return (
